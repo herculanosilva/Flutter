@@ -26,7 +26,7 @@ class HomePageState extends State<HomePage>{
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Contador: $counter'),
-          Container(height: 10),
+          Container(height: 50),
           CustomSwitch(),
           Container(height: 50),
           Row(
