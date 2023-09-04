@@ -18,8 +18,11 @@ class HomePageState extends State<HomePage> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              currentAccountPicture: Image.network(
-                  'https://media.licdn.com/dms/image/C4E03AQFA0b1hYDGv3g/profile-displayphoto-shrink_800_800/0/1539398100010?e=1699488000&v=beta&t=cvMfy610wzifFcK02UjM8NeRPQ0l2ZipJF63t21EISY'),
+              currentAccountPicture: ClipRRect(
+                borderRadius: BorderRadius.circular(40),
+                child: Image.network(
+                    'https://media.licdn.com/dms/image/C4E03AQFA0b1hYDGv3g/profile-displayphoto-shrink_800_800/0/1539398100010?e=1699488000&v=beta&t=cvMfy610wzifFcK02UjM8NeRPQ0l2ZipJF63t21EISY'),
+              ),
               accountName: Text('Herculano'),
               accountEmail: Text('herculano@email.com'),
             ),
