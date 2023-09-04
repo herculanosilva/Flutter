@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
     return SingleChildScrollView(
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 20,
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
