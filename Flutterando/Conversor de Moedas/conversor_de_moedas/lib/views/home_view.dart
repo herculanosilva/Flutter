@@ -1,3 +1,4 @@
+import 'package:conversor_de_moedas/app/components/currency_box.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -9,27 +10,33 @@ class HomeView extends StatelessWidget {
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: [
-            Image.asset('assets/images/logo.png'),
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Row(
-              children: [
-                Expanded(child: DropdownButton(items: [], onChanged: (value) {})),
-                const Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(),
-                  ),
-                ),
-              ],
-            ),
+        child: Padding(
+          padding: const EdgeInsets.only(
+          left: 30,
+          top: 100,
+          right: 30,
+          bottom: 20,
           ),
-          ElevatedButton(
-            onPressed: () {}, 
-            child: const Text('Converter'),
-          )
-          ],
+          child: Column(
+            children: [
+              Image.asset('assets/images/logo.png', 
+              width: 100,
+              height: 100,
+              ),
+            SizedBox(height: 50),
+            CurrencyBox(),
+            SizedBox(height: 10),
+            CurrencyBox(),
+            SizedBox(height: 50),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber,
+              ),
+              onPressed: () {}, 
+              child: const Text('Converter'),
+            )
+            ],
+          ),
         ),
       ),
     );
