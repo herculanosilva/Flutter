@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
                 const FlutterLogo(size: 300),
                 ElevatedButton(
                   onPressed: (){
-                    print('precionado');
+                    Navigator.pushNamed(context, 'Quiz');
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.fromLTRB(100, 20, 100, 20),

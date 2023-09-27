@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz/resultados.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -8,6 +9,10 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  int perguntaNumero = 1;
+  int acertos = 0;
+  int erros = 0;
+
   @override
   Widget build(BuildContext context) {
 
@@ -34,12 +39,40 @@ class _QuizState extends State<Quiz> {
           "Um notebook",
         ],
         "alternativa_correta":3
-      }
-    );
-    print('dados do quiz'); 
-    print(quiz); 
+      });
+    
+    for (int i = 3; i <= 20; i++) {
+      quiz.add({
+          "pergunta": "Pergunta $i",
+          "respostas": [
+            "resposta 1",
+            "resposta 2",
+            "resposta 3",
+            "resposta 4",
+          ],
+          "alternativa_correta": 1,
+      });
+    }
+    print('dados do Quiz');
 
-    int perguntaNumero = 1;
+    void respondeu(int respostaNumero){
+      setState(() {
+        if (quiz[perguntaNumero -1]['alternativa_correta'] == respostaNumero){
+          print('acertou');
+          acertos++;
+        }
+
+        print('acertos totais: $acertos erros totais: $erros');
+
+        if (perguntaNumero == 10){
+          print('Terninou o quiz');
+          Navigator.pushNamed(context, 'Resultado',
+          arguments: Argumentos(acertos));
+        } else{
+          perguntaNumero++;
+        }
+      });
+    }
 
     return MaterialApp(
       home: Scaffold(
@@ -127,6 +160,5 @@ class _QuizState extends State<Quiz> {
         ),
       ),
     );
-    ;
   }
 }
